@@ -30,3 +30,13 @@ function playRound(playerSelection, computerSelection) {
     alert("please choose rock, paper or scissors");
   }
 }
+
+function game(playerScore, computerScore, roundNumber) {
+  playerScore = 0;
+  computerScore = 0;
+playRound();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  }
