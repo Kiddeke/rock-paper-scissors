@@ -59,15 +59,7 @@ let drawWinScore = "Round Number: " + ++roundNumber + " Player Score: " + player
     }
 }
 
-function playFiveRounds() {
-    let score = "Player Score: " + playerScore + " Computer Score: " + computerScore + " Draw: " + drawScore;
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log(playGame());
-console.log("Final Scorescore: " + score);
-}
+
 
 
 
