@@ -55,19 +55,22 @@ function playRound() {
     let computerScore = 0;
     let roundNumber = 0;
 
-
-for (roundNumber = 1; roundNumber < 6; roundNumber++) {
-    console.log(`round ${roundNumber} ... make selection`);
+function playGame() {
+    for (roundNumber = 1; roundNumber < 6; roundNumber++) {
+    if (roundNumber == 1) { 
+        console.log("New Round Start");
+    }
+    console.log(`Round ${roundNumber} ... Make selection`);
     playRound();
-    console.log(`round ${roundNumber} results
-    computerScore = ${computerScore}
-    playerScore = ${playerScore}`);
+    console.log(`Round ${roundNumber} results
+    Computer Score = ${computerScore}
+    Player Score = ${playerScore}`);
     if (roundNumber == 5) {
         if (computerScore > playerScore) {
-            console.log("Final Result: loser");
+            console.log("Final Result: Loser");
         } else if (playerScore > computerScore) {
-             console.log("Final Result: winner"); 
+             console.log("Final Result: Winner"); 
         } else {
-                 console.log("Final Result: tie");
+                 console.log("Final Result: Tie");
             }
-        }}
+        }}}
