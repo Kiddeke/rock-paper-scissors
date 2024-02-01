@@ -13,59 +13,61 @@ function getComputerChoice() {
 }
 
 /** Add functino with a prompt to enter player value that checks against previous function (getComputerChoice) and returns a string that determines the outcome of the game */
-function roundLogic(playerSelection, computerSelection) {
-    playerSelection = prompt("Rock, Paper or Scissors?","").toLowerCase();
+
+function playRound() {
+    playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     computerSelection = getComputerChoice();
     if (playerSelection === computerSelection) {
-        return "Tie";
+        return alert("Tie"),
+        console.log("Tie");
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You Win! Rock beats Scissors :)";
+        return alert("You Win! Rock beats Scissors :)"),
+        console.log("You Win! Rock beats Scissors :)"),
+        playerScore++;
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You Win! Paper beats Rock :)";
+        return alert("You Win! Paper beats Rock :)"),
+        console.log("You Win! Paper beats Rock :)"),
+        playerScore++;
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You Win! Scissors beats Paper :)";
+        return alert("You Win! Scissors beats Paper :)"),
+        console.log("You Win! Scissors beats Paper :)"),
+        playerScore++;
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose. Paper beats Rock :/";
+        return alert("You Lose. Paper beats Rock :/"),
+        console.log("You Lose. Paper beats Rock :/"),
+        computerScore++;
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You Lose. Scissors beats paper :/";
+        return alert("You Lose. Scissors beats paper :/"),
+        console.log("You Lose. Scissors beats paper :/"),
+        computerScore++;
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You Lose. Rock beats scissors :/";
-    } else {
-        return "Please make the correct selection"
+        return alert("You Lose. Rock beats scissors :/"),
+        console.log("You Lose. Rock beats scissors :/"),
+        computerScore++;
+    } else if (playerSelection != "rock" || "paper" || "scissors") {
+        return alert("Please make the correct selection"); 
+        } else {
+            return null;
+        }
     }
-}
-
-let playerScore = 0;
-let computerScore = 0;
-let drawScore = 0;
-let roundNumber = 0;
-let playerWins = "You Win! Rock beats Scissors :)" || "You Win! Paper beats Rock :)" || "You Win! Scissors beats Paper :)";
-let computerWins = "You Lose. Paper beats Rock :/" || "You Lose. Scissors beats paper :/" || "You Lose. Rock beats scissors :/";
-let draw = "Tie" || "Please make the correct selection";
-let score = "Player Score: " + playerScore + " Computer Score: " + computerScore + " Draw: " + drawScore;
+    
+    let playerScore = 0;
+    let computerScore = 0;
+    let roundNumber = 0;
 
 
-function playGame() {
-    let playerWinScore = "Round Number: " + ++roundNumber + " Player Score: " + ++playerScore + " Computer Score: " + computerScore + " Draw: " + drawScore;
-let computerWinScore = "Round Number: " + ++roundNumber + " Player Score: " + playerScore + " Computer Score: " + ++computerScore + " Draw: " + drawScore;
-let drawWinScore = "Round Number: " + ++roundNumber + " Player Score: " + playerScore + " Computer Score: " + computerScore + " Draw: " + ++drawScore;
-    let result = roundLogic();
-    if (result === playerWins) {
-        return playerWinScore;
-    } else if (result === computerWins) {
-        return computerWinScore;
-    } else {
-        return drawWinScore;
-    }
-}
-
-
-
-
-
-
-/** Rock Paper Scissors:
- * Make random function getComputerChoice 1/3 r 1/3 p 1/3 s
- * Make function playRound 
- * make function return 
- */
+for (roundNumber = 1; roundNumber < 6; roundNumber++) {
+    console.log(`round ${roundNumber} ... make selection`);
+    playRound();
+    console.log(`round ${roundNumber} results
+    computerScore = ${computerScore}
+    playerScore = ${playerScore}`);
+    if (roundNumber == 5) {
+        if (computerScore > playerScore) {
+            console.log("Final Result: loser");
+        } else if (playerScore > computerScore) {
+             console.log("Final Result: winner"); 
+        } else {
+                 console.log("Final Result: tie");
+            }
+        }}
