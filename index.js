@@ -54,28 +54,28 @@ function playRound() {
     let playerScore = 0;
     let computerScore = 0;
     let roundNumber = 0; 
+    let score = `Player Score = ${playerScore} CPU Score = ${computerScore}`;
     
 
-async function playGame() {
+function playGame() {
     for (roundNumber = 1; roundNumber < 6; roundNumber++) {
     if (roundNumber == 1) { 
         console.log("New Round Start");
     }
     console.log(`Round ${roundNumber} ... Make selection`);
     playRound();
-    document.getElementById("demo").innerHTML = `playerScore = ${playerScore} CPU Score = ${computerScore}`;
     console.log(`Round ${roundNumber} results
     Computer Score = ${computerScore}
     Player Score = ${playerScore}`);
     if (roundNumber == 5) {
         if (computerScore > playerScore) {
             console.log("Final Result: Loser"),
-            document.getElementById("demo").innerHTML = `You Lose! Player Score = ${playerScore} CPU Score = ${computerScore}`;
+            document.getElementById("demo").innerHTML = `You Lose! ` + score;
         } else if (playerScore > computerScore) {
              console.log("Final Result: Winner"),
-             document.getElementById("demo").innerHTML = `You Win! Player Score = ${playerScore} CPU Score = ${computerScore}`; 
+             document.getElementById("demo").innerHTML = `You Win! ` + score; 
         } else {
                  console.log("Final Result: Tie"),
-                 document.getElementById("demo").innerHTML = `Tie. Player Score = ${playerScore} CPU Score = ${computerScore}`;
+                 document.getElementById("demo").innerHTML = `Tie. ` + score;
             }
         }}}
