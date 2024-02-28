@@ -6,14 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 </head>
+<style>
+    * {
+        border: red dotted;
+    }
+    body {
+display: flex;
+justify-content: center;
+    }
+    div {
+
+        display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+    width: 75px;
+        height: 75px; 
+    }
+    img {
+        border: black dotted;
+        border-radius: 1em;
+        margin: 20px;
+        width: 75px;
+        height: 75px;   
+    }
+</style>
 <script src="index.js"></script>
 
 <body>
-    <form>
-<input type="button" value="Play 5 Round Game" onclick="playGame()"/> 
-</form> 
-<div id="demo" >Press button.
-</div>
-    
+   <div> 
+        <img title="rock" src="images/rock.png" alt="">
+        <img title="paper" src="images/paper.png" alt="">
+        <img title="scissors" src="images/scissors.png" alt="">
+        </div>    
 </body>
 </html>
