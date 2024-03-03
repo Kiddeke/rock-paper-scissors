@@ -32,6 +32,8 @@
 <body>
     <h1>Rock Paper Scissors</h1>
     <h2>Select your choice :)</h2>
+    <button> Restart </button>
+    <input type="number">Select Number of Rounds</input>
    <div> 
         <img id="rock" title="rock" src="images/rock.png" alt="">
         <img id="paper" title="paper" src="images/paper.png" alt="">
@@ -54,26 +56,55 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 console.log(div);
+
+
 rock.addEventListener('click', () => {
     console.log(para.firstElementChild);
     console.log(div.firstChild)
+    
     if (para.firstElementChild != null) {
         para.removeChild(div);
         para.append(div);
-  div.textContent = "";
-  div.textContent = "you selected rock";
+        div.textContent = "";
+        div.textContent = "you selected rock";
     
     } else {
-  para.append(div);
-  div.textContent = "";
-  div.textContent = "you selected rock";
+        para.append(div);
+        div.textContent = "";
+        div.textContent = "you selected rock";
     }
 });
 paper.addEventListener('click', () => {
-  alert("Hello World");
+    console.log(para.firstElementChild);
+    console.log(div.firstChild)
+    
+    if (para.firstElementChild != null) {
+        para.removeChild(div);
+        para.append(div);
+        div.textContent = "";
+        div.textContent = "you selected paper";
+    
+    } else {
+        para.append(div);
+        div.textContent = "";
+        div.textContent = "you selected paper";
+    }
 });
 scissors.addEventListener('click', () => {
-  alert("Hello World");
+    console.log(para.firstElementChild);
+    console.log(div.firstChild)
+    
+    if (para.firstElementChild != null) {
+        para.removeChild(div);
+        para.append(div);
+        div.textContent = "";
+        div.textContent = "you selected scissors";
+    
+    } else {
+        para.append(div);
+        div.textContent = "";
+        div.textContent = "you selected scissors";
+    }
 });
 
 console.log(rock,  paper, scissors);
