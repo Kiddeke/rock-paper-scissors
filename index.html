@@ -11,19 +11,13 @@
         border: red dotted;
     }
     body {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
     }
     div {
-
         display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-    width: 75px;
-        height: 75px; 
     }
     img {
         border: black dotted;
@@ -39,10 +33,51 @@ flex-direction: row;
     <h1>Rock Paper Scissors</h1>
     <h2>Select your choice :)</h2>
    <div> 
-        <img title="rock" src="images/rock.png" alt="">
-        <img title="paper" src="images/paper.png" alt="">
-        <img title="scissors" src="images/scissors.png" alt="">
+        <img id="rock" title="rock" src="images/rock.png" alt="">
+        <img id="paper" title="paper" src="images/paper.png" alt="">
+        <img id="scissors" title="scissors" src="images/scissors.png" alt="">
         </div>    
-        <p></p>
+        <p>Computer Score: 
+            Player Score:
+            Round #:
+            Game #
+        </p>
 </body>
+<script> 
+
+
+
+const div = document.createElement('div');
+    div.setAttribute("id", "div1");
+const para = document.querySelector('p');
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+console.log(div);
+rock.addEventListener('click', () => {
+    console.log(para.firstElementChild);
+    console.log(div.firstChild)
+    if (para.firstElementChild != null) {
+        para.removeChild(div);
+        para.append(div);
+  div.textContent = "";
+  div.textContent = "you selected rock";
+    
+    } else {
+  para.append(div);
+  div.textContent = "";
+  div.textContent = "you selected rock";
+    }
+});
+paper.addEventListener('click', () => {
+  alert("Hello World");
+});
+scissors.addEventListener('click', () => {
+  alert("Hello World");
+});
+
+console.log(rock,  paper, scissors);
+
+
+</script>
 </html>
